@@ -16,7 +16,7 @@ inputs:
   password:
     description: Your Cloud Foundry authentication password
     required: false
-  sso-passcode:
+  passcode:
     description: Your Cloud Foundry one-time sso passcode 
     required: false
   org:

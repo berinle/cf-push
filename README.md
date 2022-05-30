@@ -51,7 +51,7 @@ jobs:
           api:      ${{ secrets.CF_API }}
           org:      ${{ secrets.CF_ORG }}
           space:    ${{ secrets.CF_SPACE }}
-          sso-passcode: ${{ secrets.CF_SSO_PASSCODE }}
+          passcode: ${{ secrets.CF_PASSCODE }}
           manifest: manifest.yml
           validate: true          # set to false if you don't want to validate ssl
 ```
