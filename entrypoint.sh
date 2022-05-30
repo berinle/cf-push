@@ -17,6 +17,13 @@ if [ -z ${INPUT_APPDIR+x} ]; then
 fi
 
 cf api ${INPUT_API} ${cf_opts}
+if [ -z ${INPUT_SSO_PASSCODE+x} ]; then 
+  echo "Logging in via one time sso token"
+  cf login --sso-passcode ${INPUT_SSO_PASSCODE} -o ${INPUT_ORG} -s ${INPUT_SPACE}
+else
+  echo "Logging in with username/password"
+  cf login -u ${INPUT_USER} -p ${INPUT_PASS} -o ${INPUT_ORG} -s ${INPUT_SPACE}
+fi
 CF_USERNAME=${INPUT_USERNAME} CF_PASSWORD=${INPUT_PASSWORD} cf auth
 cf target -o ${INPUT_ORG} -s ${INPUT_SPACE}
 cf push -f ${INPUT_MANIFEST}

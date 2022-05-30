@@ -12,10 +12,13 @@ inputs:
     required: true
   username:
     description: Your Cloud Foundry authentication username (or email address)
-    required: true
+    required: false
   password:
     description: Your Cloud Foundry authentication password
-    required: true
+    required: false
+  sso-passcode:
+    description: Your Cloud Foundry one-time sso passcode 
+    required: false
   org:
     description: The name of the Cloud Foundry organization in which to deploy
     required: true
