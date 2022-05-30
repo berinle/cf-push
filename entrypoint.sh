@@ -16,6 +16,10 @@ if [ -z ${INPUT_APPDIR+x} ]; then
     cd ${INPUT_APPDIR}
 fi
 
+echo `cf push ${INPUT_MANIFEST}`
+pwd
+ls -lrt
+
 cf api ${INPUT_API} ${cf_opts}
 if [ -z ${INPUT_PASSCODE+x} ]; then 
   echo "Logging in with username/password"
@@ -27,7 +31,4 @@ fi
 #CF_USERNAME=${INPUT_USERNAME} CF_PASSWORD=${INPUT_PASSWORD} cf auth
 #cf target -o ${INPUT_ORG} -s ${INPUT_SPACE}
 #cf push -f ${INPUT_MANIFEST}
-echo `cf push ${INPUT_MANIFEST}`
-pwd
-ls -lrt
 cf push
